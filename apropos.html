@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos — Karima Ezziadi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple: #7A00E6;
+  --purple-dark: #3D0073;
+  --black: #0A0A0A;
+  --white: #FFFFFF;
+  --lavender: #F5EEFC;
+  --text-body: #5C5566;
+}
+*{ box-sizing: border-box; margin:0; padding:0; }
+body{
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, var(--white) 0%, var(--white) 55%, var(--lavender) 100%);
+  min-height: 100vh;
+  color: var(--black);
+}
+.container{ max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+nav{ display: flex; align-items: center; justify-content: space-between; padding: 30px 0 10px; }
+.logo{ font-size: 1.4rem; font-weight: 700; color: var(--black); text-decoration: none; }
+.logo span{ color: var(--purple); }
+.nav-links{ display: flex; align-items: center; gap: 34px; list-style: none; }
+.nav-links a{ text-decoration: none; color: var(--black); font-size: 0.95rem; font-weight: 500; padding-bottom: 4px; }
+.nav-links a.active{ color: var(--purple); border-bottom: 2px solid var(--purple); }
+.contact-btn{
+  background: var(--black); color: var(--white); border: none; padding: 12px 26px;
+  border-radius: 30px; font-family: inherit; font-size: 0.9rem; font-weight: 500;
+  cursor: pointer; text-decoration: none; transition: transform 0.2s ease, background 0.2s ease;
+}
+.contact-btn:hover{ background: var(--purple); transform: translateY(-2px); }
+.contact-btn:focus-visible{ outline: 2px solid var(--black); outline-offset: 3px; }
+
+.page-content{ padding: 60px 0 100px; min-height: 60vh; }
+.page-content h1{ font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 24px; }
+.page-content h1 .highlight{ color: var(--purple); }
+.page-content p{ max-width: 700px; color: var(--text-body); line-height: 1.8; font-size: 1rem; margin-bottom: 20px; }
+
+.section-title{
+  font-size: 1.4rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--purple-dark); margin: 50px 0 28px;
+}
+.timeline{ position: relative; max-width: 700px; padding-left: 26px; border-left: 2px solid var(--lavender); }
+.timeline-item{ position: relative; padding-bottom: 32px; }
+.timeline-item:last-child{ padding-bottom: 0; }
+.timeline-item::before{
+  content: ''; position: absolute; left: -33px; top: 4px; width: 14px; height: 14px;
+  border-radius: 50%; background: var(--white); border: 3px solid var(--purple);
+}
+.timeline-header{ display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.timeline-header h3{ font-size: 1.1rem; font-weight: 600; color: var(--black); }
+.timeline-header span{ font-size: 0.85rem; font-weight: 600; color: var(--purple); white-space: nowrap; }
+.timeline-item ul{ list-style: none; color: var(--text-body); line-height: 1.8; font-size: 0.96rem; }
+.timeline-item ul li{ position: relative; padding-left: 18px; }
+.timeline-item ul li::before{ content: '•'; position: absolute; left: 0; color: var(--purple); }
+
+@media (max-width: 900px){
+  .nav-links{ display: none; }
+}
+</style>
+</head>
+<body>
+
+  <div class="container">
+
+    <nav>
+      <a href="index.html" class="logo">Karima<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html" class="active">À propos</a></li>
+        <li><a href="compétences.html">Compétences</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="expérience.html">expérience</a></li>
+        <li><a href="Activités parascolaires.html">Activités parascolaires</a></li>
+      </ul>
+      <a href="contact.html" class="contact-btn">Contactez-moi</a>
+    </nav>
+
+    <section class="page-content">
+      <h1>À <span class="highlight">propos</span></h1>
+      <p>
+        Je m'appelle Karima Ezziadi, élève ingénieure en Génie Industriel et Logistique
+        à l'ENSA Marrakech. Je m'intéresse particulièrement à la Supply Chain, à la gestion
+        de la qualité et à l'amélioration continue des processus industriels.
+      </p>
+      <p>
+        Je recherche activement un stage de fin d'études (PFE) pour mettre mes connaissances
+        en pratique et contribuer à des projets industriels concrets, tout en développant
+        mes compétences techniques et professionnelles.
+      </p>
+
+      <h2 class="section-title">Formation</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3>ENSA Marrakech</h3>
+            <span>2024 — Présent</span>
+          </div>
+          <ul>
+            <li>Cycle d'ingénieur : Génie Industriel et Logistique</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3>Classes Préparatoires Intégrées</h3>
+            <span>2022 — 2024</span>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-header">
+            <h3>Baccalauréat en Sciences Physiques</h3>
+            <span>2021 — 2022</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
