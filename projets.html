@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projets — Karima Ezziadi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple: #7A00E6;
+  --purple-dark: #3D0073;
+  --black: #0A0A0A;
+  --white: #FFFFFF;
+  --lavender: #F5EEFC;
+  --text-body: #5C5566;
+}
+*{ box-sizing: border-box; margin:0; padding:0; }
+body{
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, var(--white) 0%, var(--white) 55%, var(--lavender) 100%);
+  min-height: 100vh;
+  color: var(--black);
+}
+.container{ max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+nav{ display: flex; align-items: center; justify-content: space-between; padding: 30px 0 10px; }
+.logo{ font-size: 1.4rem; font-weight: 700; color: var(--black); text-decoration: none; }
+.logo span{ color: var(--purple); }
+.nav-links{ display: flex; align-items: center; gap: 34px; list-style: none; }
+.nav-links a{ text-decoration: none; color: var(--black); font-size: 0.95rem; font-weight: 500; padding-bottom: 4px; }
+.nav-links a.active{ color: var(--purple); border-bottom: 2px solid var(--purple); }
+.contact-btn{
+  background: var(--black); color: var(--white); border: none; padding: 12px 26px;
+  border-radius: 30px; font-family: inherit; font-size: 0.9rem; font-weight: 500;
+  cursor: pointer; text-decoration: none; transition: transform 0.2s ease, background 0.2s ease;
+}
+.contact-btn:hover{ background: var(--purple); transform: translateY(-2px); }
+
+.page-content{ padding: 60px 0 100px; min-height: 60vh; }
+.page-content h1{ font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; margin-bottom: 24px; }
+.page-content h1 .highlight{ color: var(--purple); }
+.page-content > p{ max-width: 700px; color: var(--text-body); line-height: 1.8; font-size: 1rem; margin-bottom: 40px; }
+
+/* ===== CARTE PROJET ===== */
+.project-card{
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 36px;
+  background: var(--white);
+  border: 1px solid var(--lavender);
+  border-radius: 20px;
+  padding: 28px;
+  max-width: 1000px;
+  box-shadow: 0 10px 30px rgba(122,0,230,0.06);
+}
+.project-card .project-image{
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--lavender);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-card .project-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.project-card .project-body h2{
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--black);
+}
+.project-card .project-body .project-tag{
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--purple);
+  background: var(--lavender);
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+}
+.project-body h3{
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--purple-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 18px 0 8px;
+}
+.project-body h3:first-of-type{ margin-top: 4px; }
+.project-body p{
+  color: var(--text-body);
+  line-height: 1.75;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+.project-body ul{
+  list-style: none;
+  color: var(--text-body);
+  line-height: 1.9;
+  font-size: 0.95rem;
+}
+.project-body ul li{
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 4px;
+}
+.project-body ul li::before{
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--purple);
+}
+.project-body ul li strong{ color: var(--black); }
+
+/* ===== GROUPES D'IMAGES ===== */
+
+/* Groupe vertical (Projet 2) */
+.project-images-group{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+}
+.project-images-group .project-image{
+  min-height: 104px;
+  flex: 1;
+}
+
+/* Grille 2+2+1 (Projet 3) */
+.project-images-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+.project-images-grid .project-image{
+  min-height: 100px;
+  aspect-ratio: 1 / 1;
+}
+.project-images-grid .project-image:first-child{
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 10;
+}
+
+/* ===== PROJET 4 - TOUTES LES IMAGES EN 16:9 PAYSAGE ===== */
+.project-images-grid-4{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+}
+.project-images-grid-4 .project-image{
+  border-radius: 10px;
+  overflow: hidden;
+  background: #1a1a2e;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-images-grid-4 .project-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.project-images-grid-4 .project-image:hover{
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 8px 25px rgba(122,0,230,0.12);
+  z-index: 2;
+}
+.project-images-grid-4 .project-image:hover img{
+  transform: scale(1.02);
+}
+
+/* ===== TOUTES LES 4 IMAGES EN 16:9 (PAYSAGE) ===== */
+.project-images-grid-4 .project-image:first-child,
+.project-images-grid-4 .project-image:nth-child(2),
+.project-images-grid-4 .project-image:nth-child(3),
+.project-images-grid-4 .project-image:nth-child(4){
+  aspect-ratio: 16 / 9;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 800px){
+  .project-card{ grid-template-columns: 1fr; }
+  .project-card .project-image{ min-height: 200px; }
+  .project-images-grid-4{
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .project-images-grid-4 .project-image:first-child,
+  .project-images-grid-4 .project-image:nth-child(2),
+  .project-images-grid-4 .project-image:nth-child(3),
+  .project-images-grid-4 .project-image:nth-child(4){
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 900px){
+  .nav-links{ display: none; }
+}
+
+@media (max-width: 500px){
+  .project-images-grid-4{
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .project-images-grid-4 .project-image:first-child,
+  .project-images-grid-4 .project-image:nth-child(2),
+  .project-images-grid-4 .project-image:nth-child(3),
+  .project-images-grid-4 .project-image:nth-child(4){
+    aspect-ratio: 16 / 9;
+  }
+}
+</style>
+</head>
+<body>
+
+  <div class="container">
+
+    <nav>
+      <a href="index.html" class="logo">Karima<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="compétences.html">Compétences</a></li>
+        <li><a href="projets.html" class="active">Projets</a></li>
+        <li><a href="expérience.html">Expérience</a></li>
+        <li><a href="Activités%20parascolaires.html">Activités parascolaires</a></li>
+      </ul>
+      <a href="contact.html" class="contact-btn">Contactez-moi</a>
+    </nav>
+
+    <section class="page-content">
+      <h1>Mes <span class="highlight">projets</span></h1>
+      <p>
+        Cette section présente une sélection de projets réalisés au cours de mon parcours en Génie Industriel et Logistique. Elle met en avant les expériences les plus représentatives de mes compétences en Supply Chain, amélioration continue, digitalisation et analyse de données.
+      </p>
+
+      <!-- PROJET 1 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="Projet1.jpeg" alt="Système de gestion des commandes - Excel VBA et MySQL">
+        </div>
+
+        <div class="project-body">
+          <span class="project-tag">Projet personnel</span>
+          <h2>Développement d'un système de gestion des commandes</h2>
+          <p>
+            Automatisation de la saisie et du stockage des informations clients et produits
+            via une interface Excel VBA connectée à une base de données SQL.
+          </p>
+
+          <h3>Contexte et objectif</h3>
+          <p>
+            Dans un processus de gestion des commandes, la saisie manuelle des données clients
+            et produits est souvent source d'erreurs et de perte de temps. L'objectif de ce
+            projet est donc de concevoir un outil simple et fiable permettant de centraliser
+            ces informations, tout en réduisant les tâches répétitives.
+          </p>
+
+          <h3>Fonctionnement</h3>
+          <ul>
+            <li>Un formulaire (<strong>UserForm</strong>) développé en VBA Excel permet à l'utilisateur de saisir les informations d'un client (nom, contact, adresse...) et d'une commande (produit, quantité, prix...)</li>
+            <li>Une connexion <strong>ODBC</strong> (Open Database Connectivity) relie Excel à une base de données <strong>MySQL</strong></li>
+            <li>Dès validation du formulaire, les données sont automatiquement transférées et enregistrées dans la base SQL, sans intervention manuelle supplémentaire</li>
+          </ul>
+
+          <h3>Compétences et outils utilisés</h3>
+          <ul>
+            <li><strong>VBA Excel</strong> : conception du formulaire (UserForm), programmation des événements et validation des champs</li>
+            <li><strong>ODBC</strong> : configuration de la connexion entre Excel et MySQL</li>
+            <li><strong>MySQL</strong> : structuration et gestion de la base de données (tables clients, produits, commandes)</li>
+            <li>Logique de gestion de données et automatisation de processus</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PROJET 2 -->
+      <div class="project-card">
+        <div class="project-images-group">
+          <div class="project-image">
+            <img src="Projet21.jpeg" alt="Simulation 2D de l'entrepôt logistique">
+          </div>
+          <div class="project-image">
+            <img src="Projet22.jpeg" alt="Simulation 3D de l'entrepôt logistique">
+          </div>
+        </div>
+
+        <div class="project-body">
+          <span class="project-tag">Projet personnel</span>
+          <h2>Simulation d'un entrepôt logistique (2D &amp; 3D)</h2>
+          <p>
+            Simulation 2D et 3D d'un entrepôt d'une entreprise d'électroménager intégrant les
+            flux logistiques (camions, marchandises et zones de stockage). Mise en œuvre de
+            différentes stratégies de gestion des stocks (stock d'anticipation, stock spéculatif
+            et stock obsolète) afin d'optimiser l'organisation des flux, le stockage et les
+            opérations logistiques.
+          </p>
+
+          <h3>Compétences développées</h3>
+          <ul>
+            <li>Modélisation et simulation des flux logistiques</li>
+            <li>Gestion et optimisation des stocks</li>
+            <li>Organisation des espaces de stockage</li>
+            <li>Analyse des performances d'un entrepôt</li>
+          </ul>
+
+          <h3>Outils</h3>
+          <ul>
+            <li><strong>AnyLogic</strong> : simulation des flux et des stratégies de stock</li>
+            <li><strong>AutoCAD</strong> : conception du plan 2D</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PROJET 3 -->
+      <div class="project-card">
+        <div class="project-images-grid">
+          <div class="project-image">
+            <img src="Projet31.jpeg" alt="Planning de production FrePPLe">
+          </div>
+          <div class="project-image">
+            <img src="Projet32.jpeg" alt="Diagramme de Gantt FrePPLe">
+          </div>
+          <div class="project-image">
+            <img src="Projet33.jpeg" alt="Suivi des commandes clients FrePPLe">
+          </div>
+          <div class="project-image">
+            <img src="Projet35.jpeg" alt="Rapports de stocks FrePPLe">
+          </div>
+          <div class="project-image">
+            <img src="Projet36.jpeg" alt="Planification Kanban FrePPLe">
+          </div>
+        </div>
+
+        <div class="project-body">
+          <span class="project-tag">Projet personnel</span>
+          <h2>Optimisation de la planification de la production avec FrePPLe (APS)</h2>
+          <p>
+            Conception d'un système de planification avancée (APS) pour une entreprise de
+            boissons gazeuses (CBGS) à l'aide de FrePPLe, afin d'optimiser la production,
+            les approvisionnements et les livraisons en fonction de la demande client.
+          </p>
+
+          <h3>Réalisations</h3>
+          <ul>
+            <li>Planification automatique des ordres de fabrication selon les commandes clients</li>
+            <li>Optimisation de l'utilisation des lignes d'embouteillage et des capacités de production</li>
+            <li>Gestion des approvisionnements en matières premières pour assurer la continuité de la production</li>
+            <li>Détection des retards potentiels et optimisation des délais de livraison</li>
+            <li>Suivi des commandes clients (statuts, priorités et délais)</li>
+            <li>Élaboration de tableaux de bord et de rapports sur les prévisions de la demande, les stocks, les ordres de livraison et le taux d'utilisation des lignes de production</li>
+            <li>Visualisation du planning de production à l'aide d'un diagramme de Gantt interactif et pilotage des ordres de fabrication par cartes Kanban</li>
+          </ul>
+
+          <h3>Outil</h3>
+          <ul>
+            <li><strong>FrePPLe</strong> : Advanced Planning and Scheduling (APS)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ===== PROJET 4 - TOUTES LES IMAGES EN 16:9 PAYSAGE ===== -->
+      <div class="project-card">
+        <div class="project-images-grid-4">
+          <div class="project-image">
+            <img src="Projet40.jpeg" alt="Analyse ABC des stocks">
+          </div>
+          <div class="project-image">
+            <img src="Projet41.jpeg" alt="Comparaison des modèles Machine Learning">
+          </div>
+          <div class="project-image">
+            <img src="Projet42.jpeg" alt="Prévision de la demande - Time Series Forecasting">
+          </div>
+          <div class="project-image">
+            <img src="Projet43.jpeg" alt="Simulateur interactif de gestion des stocks">
+          </div>
+        </div>
+
+        <div class="project-body">
+          <span class="project-tag">Projet personnel</span>
+          <h2>Système intelligent de gestion des stocks basé sur l'analyse ABC et le Machine Learning</h2>
+          <p>
+            Conception d'un système intelligent d'aide à la décision pour la gestion des stocks,
+            combinant l'analyse ABC (méthode de Pareto), le Machine Learning et la prévision de
+            la demande afin d'optimiser les politiques de stockage et d'approvisionnement.
+          </p>
+
+          <h3>Réalisations</h3>
+          <ul>
+            <li>Automatisation de la méthode ABC (Pareto 80/20) pour classifier dynamiquement les produits selon leur contribution au chiffre d'affaires</li>
+            <li>Développement et comparaison de plusieurs modèles de Machine Learning (Random Forest, SVM et KNN) pour la classification des produits ; obtention d'une précision de 99 % avec Random Forest</li>
+            <li>Intégration d'un modèle de prévision de la demande (Time Series Forecasting) afin d'anticiper les besoins futurs et d'améliorer la planification des approvisionnements</li>
+            <li>Développement d'un simulateur interactif permettant d'évaluer l'impact des variations de prix, des remises et des volumes de vente sur le chiffre d'affaires et les niveaux de stock</li>
+            <li>Mise en place d'un outil d'aide à la décision visant à réduire les ruptures de stock, optimiser les coûts de stockage et améliorer la gestion des stocks</li>
+          </ul>
+
+          <h3>Outils &amp; technologies</h3>
+          <ul>
+            <li><strong>Python</strong>, <strong>Scikit-learn</strong>, <strong>Pandas</strong></li>
+            <li><strong>Jupyter Notebook</strong> &amp; <strong>Jupyter Widgets</strong></li>
+            <li><strong>Random Forest</strong>, <strong>SVM</strong>, <strong>KNN</strong></li>
+            <li><strong>Time Series Forecasting</strong></li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio · Expériences MUN & Conferences</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+            background: #f7f3fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            line-height: 1.6;
+            background-image: radial-gradient(ellipse at 10% 20%, rgba(122, 0, 230, 0.05) 0%, transparent 50%),
+                              radial-gradient(ellipse at 90% 80%, rgba(122, 0, 230, 0.05) 0%, transparent 50%);
+        }
+
+        .portfolio-card {
+            max-width: 1140px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 40px;
+            box-shadow: 0 30px 60px -20px rgba(20, 0, 40, 0.25), 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+            padding: 3rem 2.5rem;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .portfolio-card::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(122, 0, 230, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .portfolio-card::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(91, 33, 182, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* ===== EN-TÊTE ===== */
+        .header {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #ede0fa;
+            position: relative;
+        }
+
+        .header .header-top {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .header .header-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #7a00e6, #9b33ff);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(122, 0, 230, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1a0033;
+            letter-spacing: -0.03em;
+        }
+
+        .header h1 .highlight {
+            background: linear-gradient(135deg, #7a00e6, #9b33ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header .subtitle {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.6rem 1rem;
+            margin-top: 0.8rem;
+            padding-left: 0.5rem;
+        }
+
+        .header .subtitle .tag {
+            background: #f3e8ff;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #4c1d95;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .header .subtitle .tag:hover {
+            background: #e9d8fd;
+            border-color: #d3b3f7;
+            transform: translateY(-2px);
+        }
+
+        .header .subtitle .tag i {
+            color: #7a00e6;
+            font-size: 0.85rem;
+        }
+
+        /* ===== VIDÉO ===== */
+        .video-center {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 300px;
+            max-width: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            background: #1a0033;
+            box-shadow: 0 15px 40px rgba(20, 0, 40, 0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .video-wrapper:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 50px rgba(20, 0, 40, 0.25);
+        }
+
+        .video-wrapper video {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 9 / 16;
+            object-fit: cover;
+            background: #1a0033;
+        }
+
+        .video-wrapper .play-badge {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            font-size: 0.65rem;
+            padding: 0.3rem 0.9rem;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            letter-spacing: 0.04em;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26, 0, 51, 0.40) 0%, rgba(26, 0, 51, 0.05) 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            pointer-events: none;
+            text-align: center;
+        }
+
+        .video-overlay .overlay-text {
+            color: #fff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            max-width: 90%;
+        }
+
+        .video-overlay .overlay-text h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.2rem;
+        }
+
+        .video-overlay .overlay-text p {
+            font-size: 0.7rem;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 0.04em;
+        }
+
+        /* ===== PHOTOS MUN ===== */
+        .photos-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+
+        .photos-section .photo-item {
+            border-radius: 18px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            border: 3px solid #ffffff;
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            background: #f2ecfa;
+            object-fit: cover;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .photos-section .photo-item img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .photos-section .photo-item:hover {
+            transform: scale(1.06) translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+            z-index: 5;
+        }
+
+        .photos-section .photo-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .photos-section .photo-item:not(.m2-large) {
+            width: 140px;
+            height: 140px;
+        }
+
+        .photos-section .photo-item.m2-large {
+            width: 220px;
+            height: 220px;
+        }
+
+        .photos-section .photo-item .photo-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.4));
+            padding: 0.5rem 1rem;
+            color: #fff;
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-align: center;
+        }
+
+        .photos-section .photo-item:hover .photo-label {
+            opacity: 1;
+        }
+
+        /* ===== COMPÉTENCES GLOBALES ===== */
+        .skills-section {
+            background: linear-gradient(135deg, #f6f0fc, #ede2f8);
+            border-radius: 28px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid #e3d3f5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skills-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(122, 0, 230, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .skills-section .skills-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #20103d;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skills-section .skills-title .title-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #cbb0e7, transparent);
+        }
+
+        .skills-section .skills-title i {
+            color: #7a00e6;
+            font-size: 1.1rem;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.7rem 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skills-grid .skill-item {
+            background: #ffffff;
+            color: #4c1d95;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.5rem 1.6rem;
+            border-radius: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            border: 1px solid #dcc5ef;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skills-grid .skill-item:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(122, 0, 230, 0.12);
+            border-color: #c9a6f0;
+            background: #fdfaff;
+        }
+
+        .skills-grid .skill-item i {
+            color: #7a00e6;
+            font-size: 0.8rem;
+        }
+
+        /* ===== GRILLE MUN ===== */
+        .section-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #6b3fa0;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-label .line {
+            flex: 1;
+            height: 1px;
+            background: #e6d9f2;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .exp-card {
+            background: #faf6fd;
+            border-radius: 24px;
+            padding: 1.8rem 1.8rem 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            border: 1px solid #ede3f5;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exp-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #7a00e6, #9b33ff, #7a00e6);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .exp-card:hover::before {
+            opacity: 1;
+        }
+
+        .exp-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -12px rgba(90, 20, 150, 0.14);
+            border-color: #cbb0e7;
+        }
+
+        .exp-card .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .exp-card .card-header .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: #fff;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #7a00e6, #9b33ff);
+            box-shadow: 0 6px 16px rgba(122, 0, 230, 0.25);
+        }
+
+        .exp-card .card-header .icon.co {
+            background: linear-gradient(135deg, #5b21b6, #7c3aed);
+            box-shadow: 0 6px 16px rgba(91, 33, 182, 0.25);
+        }
+
+        .exp-card .card-header .title-group h2 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #20103d;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        .exp-card .card-header .title-group .badge {
+            display: inline-block;
+            background: #7a00e6;
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0.15rem 0.9rem;
+            border-radius: 30px;
+            margin-top: 0.2rem;
+        }
+
+        .exp-card .card-header .title-group .badge.co {
+            background: #5b21b6;
+        }
+
+        .exp-card .card-sub {
+            font-size: 0.85rem;
+            color: #5b2c8d;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px dashed #e0cdf0;
+        }
+
+        .exp-card .card-sub i {
+            margin-right: 6px;
+            color: #8b3fc7;
+        }
+
+        .exp-card .responsibilities {
+            list-style: none;
+            flex: 1;
+        }
+
+        .exp-card .responsibilities li {
+            display: flex;
+            gap: 0.7rem;
+            align-items: flex-start;
+            padding: 0.4rem 0;
+            font-size: 0.9rem;
+            color: #2e1065;
+            border-bottom: 1px solid rgba(180, 140, 220, 0.15);
+        }
+
+        .exp-card .responsibilities li:last-child {
+            border-bottom: none;
+        }
+
+        .exp-card .responsibilities li i {
+            color: #7a00e6;
+            font-size: 0.7rem;
+            margin-top: 0.3rem;
+            width: 1rem;
+            flex-shrink: 0;
+        }
+
+        .exp-card .responsibilities li .highlight {
+            color: #20103d;
+            font-weight: 600;
+        }
+
+        /* ===== CARTES PLEINES ===== */
+        .exp-card-full {
+            background: #faf6fd;
+            border-radius: 28px;
+            padding: 2rem 2rem 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            border: 1px solid #ede3f5;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exp-card-full::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #a21caf, #c026d3, #a21caf);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .exp-card-full:hover::before {
+            opacity: 1;
+        }
+
+        .exp-card-full:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -12px rgba(90, 20, 150, 0.14);
+            border-color: #cbb0e7;
+        }
+
+        .exp-card-full .card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .exp-card-full .card-header .icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: #fff;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #a21caf, #c026d3);
+            box-shadow: 0 8px 20px rgba(162, 28, 175, 0.25);
+        }
+
+        .exp-card-full .card-header .icon.thermal {
+            background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+            box-shadow: 0 8px 20px rgba(109, 40, 217, 0.25);
+        }
+
+        .exp-card-full .card-header .icon.sil {
+            background: linear-gradient(135deg, #4c1d95, #7a00e6);
+            box-shadow: 0 8px 20px rgba(76, 29, 149, 0.25);
+        }
+
+        /* Couleur Sanofi - bleu-vert pour Water4Future */
+        .exp-card-full .card-header .icon.water {
+            background: linear-gradient(135deg, #00A1A1, #008080);
+            box-shadow: 0 8px 20px rgba(0, 161, 161, 0.3);
+        }
+
+        .exp-card-full .card-header .title-group h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #20103d;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        .exp-card-full .card-header .title-group .badge {
+            display: inline-block;
+            color: white;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding: 0.15rem 1rem;
+            border-radius: 30px;
+            margin-top: 0.2rem;
+        }
+
+        .exp-card-full .card-header .title-group .badge.cgil {
+            background: #a21caf;
+        }
+
+        .exp-card-full .card-header .title-group .badge.thermal {
+            background: #6d28d9;
+        }
+
+        .exp-card-full .card-header .title-group .badge.sil {
+            background: #4c1d95;
+        }
+
+        .exp-card-full .card-header .title-group .badge.water {
+            background: #008080;
+        }
+
+        .exp-card-full .card-sub {
+            font-size: 0.85rem;
+            color: #5b2c8d;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px dashed #e0cdf0;
+        }
+
+        .exp-card-full .card-sub i {
+            margin-right: 6px;
+            color: #8b3fc7;
+        }
+
+        .exp-card-full .responsibilities {
+            list-style: none;
+            flex: 1;
+        }
+
+        .exp-card-full .responsibilities li {
+            display: flex;
+            gap: 0.7rem;
+            align-items: flex-start;
+            padding: 0.45rem 0;
+            font-size: 0.92rem;
+            color: #2e1065;
+            border-bottom: 1px solid rgba(180, 140, 220, 0.15);
+        }
+
+        .exp-card-full .responsibilities li:last-child {
+            border-bottom: none;
+        }
+
+        .exp-card-full .responsibilities li i {
+            color: #7a00e6;
+            font-size: 0.7rem;
+            margin-top: 0.3rem;
+            width: 1rem;
+            flex-shrink: 0;
+        }
+
+        .exp-card-full .responsibilities li .highlight {
+            color: #20103d;
+            font-weight: 600;
+        }
+
+        /* ===== SOUS-TITRES INTERNES (ex: rôle comité / rôle projet) ===== */
+        .exp-card-full .sub-heading {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 700;
+            color: #0e7490;
+            margin: 0.6rem 0 0.5rem;
+        }
+
+        .exp-card-full .sub-heading i {
+            margin-right: 6px;
+        }
+
+        /* ===== PHOTOS ÉVÉNEMENTS ===== */
+        .event-photos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin: 0.8rem 0 1.2rem 0;
+            padding: 0.8rem;
+            background: #ffffff;
+            border-radius: 18px;
+            border: 1px solid #ede3f5;
+            transition: all 0.3s ease;
+        }
+
+        .event-photos:hover {
+            border-color: #cbb0e7;
+        }
+
+        .event-photos img {
+            height: 130px;
+            object-fit: cover;
+            border-radius: 14px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+            border: 2px solid #ffffff;
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+            background: #f2ecfa;
+        }
+
+        /* Format Portrait (téléphone) */
+        .event-photos img.portrait {
+            width: 130px;
+            aspect-ratio: 9 / 16;
+        }
+
+        /* Format Paysage (PC) */
+        .event-photos img.landscape {
+            width: 260px;
+            aspect-ratio: 16 / 9;
+        }
+
+        .event-photos img:hover {
+            transform: scale(1.06) translateY(-4px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+            z-index: 5;
+            position: relative;
+        }
+
+        /* ===== COMPÉTENCES CONFÉRENCES ===== */
+        .conference-skills {
+            background: linear-gradient(135deg, #f3e8ff, #e9d8fd);
+            border-radius: 18px;
+            padding: 1.2rem 1.5rem;
+            margin-top: 0.8rem;
+            border-left: 4px solid #7a00e6;
+            transition: all 0.3s ease;
+        }
+
+        .conference-skills:hover {
+            border-left-color: #9b33ff;
+            background: linear-gradient(135deg, #f6ecff, #ede0fc);
+        }
+
+        .conference-skills.water {
+            border-left-color: #008080;
+        }
+
+        .conference-skills.water:hover {
+            border-left-color: #00A1A1;
+        }
+
+        .conference-skills .skills-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #4c1d95;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .conference-skills .skills-label i {
+            margin-right: 6px;
+            color: #7a00e6;
+        }
+
+        .conference-skills .skills-tag {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem 0.6rem;
+        }
+
+        .conference-skills .skills-tag span {
+            background: #ffffff;
+            color: #4c1d95;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.25rem 1.1rem;
+            border-radius: 40px;
+            border: 1px solid #ddbff5;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .conference-skills .skills-tag span:hover {
+            background: #f8f1ff;
+            border-color: #c9a6f0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .conference-skills .skills-tag span i {
+            color: #7a00e6;
+            font-size: 0.7rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-note {
+            margin-top: 1.5rem;
+            text-align: right;
+            font-size: 0.8rem;
+            color: #6b4c93;
+            border-top: 1px solid #ead9fb;
+            padding-top: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .footer-note .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            color: #8b5cf6;
+        }
+
+        .footer-note .footer-left i {
+            color: #7a00e6;
+        }
+
+        .footer-note .footer-right {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-note .footer-right i {
+            color: #7a00e6;
+            margin-left: 4px;
+        }
+
+        .footer-note .footer-right .dot {
+            width: 6px;
+            height: 6px;
+            background: #7a00e6;
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 800px) {
+            .portfolio-card {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .header .header-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.4rem;
+            }
+
+            .video-wrapper {
+                width: 240px;
+            }
+
+            .photos-section .photo-item:not(.m2-large) {
+                width: 110px;
+                height: 110px;
+            }
+
+            .photos-section .photo-item.m2-large {
+                width: 170px;
+                height: 170px;
+            }
+
+            .event-photos img.portrait {
+                width: 100px;
+                height: auto;
+                aspect-ratio: 9 / 16;
+            }
+
+            .event-photos img.landscape {
+                width: 200px;
+                height: auto;
+                aspect-ratio: 16 / 9;
+            }
+
+            .skills-grid .skill-item {
+                font-size: 0.78rem;
+                padding: 0.4rem 1.2rem;
+            }
+
+            .conference-skills .skills-tag span {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.9rem;
+            }
+
+            .footer-note {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-card {
+                padding: 1.2rem 0.8rem;
+                border-radius: 24px;
+            }
+
+            .header h1 {
+                font-size: 1.3rem;
+            }
+
+            .header .subtitle .tag {
+                font-size: 0.7rem;
+                padding: 0.25rem 0.8rem;
+            }
+
+            .video-wrapper {
+                width: 180px;
+            }
+
+            .photos-section .photo-item:not(.m2-large) {
+                width: 80px;
+                height: 80px;
+            }
+
+            .photos-section .photo-item.m2-large {
+                width: 130px;
+                height: 130px;
+            }
+
+            .photos-section {
+                gap: 0.6rem;
+            }
+
+            .event-photos img.portrait {
+                width: 80px;
+                height: auto;
+                aspect-ratio: 9 / 16;
+            }
+
+            .event-photos img.landscape {
+                width: 150px;
+                height: auto;
+                aspect-ratio: 16 / 9;
+            }
+
+            .event-photos {
+                gap: 0.5rem;
+                padding: 0.5rem;
+            }
+
+            .exp-card-full .card-header .icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .exp-card .card-header .icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .exp-card-full .card-header .title-group h2,
+            .exp-card .card-header .title-group h2 {
+                font-size: 1rem;
+            }
+
+            .responsibilities li {
+                font-size: 0.82rem !important;
+            }
+
+            .skills-grid .skill-item {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.9rem;
+            }
+
+            .conference-skills {
+                padding: 0.8rem 1rem;
+            }
+
+            .conference-skills .skills-tag span {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.7rem;
+            }
+
+            .skills-section {
+                padding: 1.2rem 1rem;
+            }
+
+            .exp-card,
+            .exp-card-full {
+                padding: 1.2rem 1rem;
+            }
+
+            .video-overlay .overlay-text h2 {
+                font-size: 0.8rem;
+            }
+            .video-overlay .overlay-text p {
+                font-size: 0.55rem;
+            }
+            .video-wrapper .play-badge {
+                font-size: 0.5rem;
+                padding: 0.2rem 0.6rem;
+            }
+        }
+
+        .fa-chevron-right {
+            font-size: 0.55rem !important;
+            color: #7a00e6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="portfolio-card">
+
+    <!-- ===== EN-TÊTE ===== -->
+    <div class="header">
+        <div class="header-top">
+            <div class="header-icon">
+                <i class="fas fa-gavel"></i>
+            </div>
+            <h1>
+                Ici, vous trouverez <span class="highlight">quelques-unes des activités</span> que j'ai menées
+            </h1>
+        </div>
+        <div class="subtitle">
+            <span class="tag"><i class="fas fa-flag"></i> UNSC · Security Council</span>
+            <span class="tag"><i class="fas fa-scale-balanced"></i> UNHRC · Human Rights</span>
+            <span class="tag"><i class="fas fa-calendar-alt"></i> Tetouan · ENSA Marrakech</span>
+            <span class="tag" style="background: #ede0fa;"><i class="fas fa-star"></i> 4+ Expériences</span>
+        </div>
+    </div>
+
+    <!-- ===== VIDÉO ===== -->
+    <div class="video-center">
+        <div class="video-wrapper">
+            <video autoplay muted loop playsinline>
+                <source src="video1.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas la vidéo.
+            </video>
+            <div class="play-badge">
+                <i class="fas fa-play-circle"></i> VIDÉO
+            </div>
+            <div class="video-overlay">
+                <div class="overlay-text">
+                    <h2><i class="fas fa-gavel" style="margin-right: 6px;"></i> Présidence MUN</h2>
+                    <p>UNSC · UNHRC</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== PHOTOS MUN ===== -->
+    <div class="photos-section">
+        <div class="photo-item">
+            <img src="M1.jpeg" alt="Photo MUN 1" />
+            <div class="photo-label">MUN 1</div>
+        </div>
+        <div class="photo-item m2-large">
+            <img src="M2.jpeg" alt="Photo MUN 2" />
+            <div class="photo-label">MUN 2</div>
+        </div>
+        <div class="photo-item">
+            <img src="M3.jpeg" alt="Photo MUN 3" />
+            <div class="photo-label">MUN 3</div>
+        </div>
+        <div class="photo-item">
+            <img src="M4.jpeg" alt="Photo MUN 4" />
+            <div class="photo-label">MUN 4</div>
+        </div>
+        <div class="photo-item">
+            <img src="M5.jpeg" alt="Photo MUN 5" />
+            <div class="photo-label">MUN 5</div>
+        </div>
+        <div class="photo-item">
+            <img src="M6.jpeg" alt="Photo MUN 6" />
+            <div class="photo-label">MUN 6</div>
+        </div>
+        <div class="photo-item">
+            <img src="M7.jpeg" alt="Photo MUN 7" />
+            <div class="photo-label">MUN 7</div>
+        </div>
+    </div>
+
+    <!-- ===== COMPÉTENCES GLOBALES ===== -->
+    <div class="skills-section">
+        <div class="skills-title">
+            <i class="fas fa-star"></i> Compétences développées
+            <span class="title-line"></span>
+        </div>
+        <div class="skills-grid">
+            <span class="skill-item"><i class="fas fa-users-cog"></i> Travail d'équipe</span>
+            <span class="skill-item"><i class="fas fa-comment-dots"></i> Communication</span>
+            <span class="skill-item"><i class="fas fa-tasks"></i> Organisation</span>
+            <span class="skill-item"><i class="fas fa-calendar-check"></i> Gestion d'événements</span>
+            <span class="skill-item"><i class="fas fa-handshake"></i> Résolution de conflits</span>
+            <span class="skill-item"><i class="fas fa-people-arrows"></i> Leadership collaboratif</span>
+            <span class="skill-item"><i class="fas fa-microphone-alt"></i> Gestion de débat</span>
+            <span class="skill-item"><i class="fas fa-globe"></i> Diplomatie</span>
+            <span class="skill-item"><i class="fas fa-gavel"></i> Procédure ONU</span>
+            <span class="skill-item"><i class="fas fa-balance-scale"></i> Prise de décision</span>
+        </div>
+    </div>
+
+    <!-- ===== SECTION MUN ===== -->
+    <div class="section-label">
+        <i class="fas fa-gavel" style="color: #7a00e6;"></i> Expériences MUN
+        <span class="line"></span>
+    </div>
+
+    <div class="experience-grid">
+
+        <!-- CARD 1 : UNSC -->
+        <div class="exp-card">
+            <div class="card-header">
+                <div class="icon">
+                    <i class="fas fa-landmark"></i>
+                </div>
+                <div class="title-group">
+                    <h2>Chair · UNSC</h2>
+                    <div class="badge">Security Council</div>
+                </div>
+            </div>
+            <div class="card-sub">
+                <i class="fas fa-map-pin"></i> MUN Tetouan · Presidency
+            </div>
+            <ul class="responsibilities">
+                <li><i class="fas fa-chevron-right"></i> <span class="highlight">Prepare</span> geopolitical themes and reference documents.</li>
+                <li><i class="fas fa-chevron-right"></i> <span class="highlight">Accompany</span> delegates in their preparation.</li>
+                <li><i class="fas fa-chevron-right"></i> <span class="highlight">Preside</span> debates &amp; ensure UN procedure.</li>
+                <li><i class="fas fa-chevron-right"></i> <span class="highlight">Manage</span> exchanges for constructive dialogue.</li>
+                <li><i class="fas fa-chevron-right"></i> <span class="highlight">Assess</span> performance &amp; select best delegates.</li>
+            </ul>
+        </div>
+
+        <!-- CARD 2 : UNHRC -->
+        <div class="exp-card">
+            <div class="card-header">
+                <div class="icon co">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <div class="title-group">
+                    <h2>Co-Chair · UNHRC</h2>
+                    <div class="badge co">Human Rights Council</div>
+                </div>
+            </div>
+            <div class="card-sub">
+                <i class="fas fa-map-pin"></i> ENSA Marrakech · Co-Presidency
+            </div>
+            <ul class="responsibilities">
+                <li><i class="fas fa-chevron-right"></i> <span class="highlight">Participate</span> in committee preparation.</li>
+                <li><i class="fas fa-chevron-right"></i> <span class="highlight">Accompany</span> delegates on procedures.</li>
+                <li><i class="fas fa-chevron-right"></i> <span class="highlight">Assist</span> the Chair in moderation.</li>
+                <li><i class="fas fa-chevron-right"></i> <span class="highlight">Ensure</span> time &amp; organization compliance.</li>
+                <li><i class="fas fa-chevron-right"></i> <span class="highlight">Assess</span> delegates &amp; draft feedback.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ===== SECTION CONFÉRENCES ===== -->
+    <div class="section-label">
+        <i class="fas fa-calendar-alt" style="color: #a21caf;"></i> Organisation de Conférences
+        <span class="line"></span>
+    </div>
+
+    <!-- ===== EXPÉRIENCE 1 : CGIL ===== -->
+    <div class="exp-card-full">
+        <div class="card-header">
+            <div class="icon">
+                <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="title-group">
+                <h2>Responsable Formation</h2>
+                <div class="badge cgil">CGIL</div>
+            </div>
+        </div>
+        <div class="card-sub">
+            <i class="fas fa-map-pin"></i> Club Génie Industriel et Logistique (CGIL)
+        </div>
+
+        <div class="event-photos">
+            <img src="G1.jpeg" alt="CGIL 1" />
+            <img src="G2.jpeg" alt="CGIL 2" />
+            <img src="G3.jpeg" alt="CGIL 3" />
+            <img src="G4.jpeg" alt="CGIL 4" />
+            <img src="G5.jpeg" alt="CGIL 5" />
+        </div>
+
+        <ul class="responsibilities">
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Organiser</span> des formations, ateliers et conférences.</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Identifier</span> les besoins en formation.</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Collaborer</span> avec intervenants académiques.</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Organiser</span> le Hackathon « Smart City as a System ».</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Coordonner</span> la logistique et les équipes.</li>
+        </ul>
+
+        <div class="skills-label"><i class="fas fa-bolt"></i> compétences développées</div>
+        <div class="skills-tag">
+            <span><i class="fas fa-chess-king"></i> Leadership</span>
+            <span><i class="fas fa-project-diagram"></i> Gestion de projet</span>
+            <span><i class="fas fa-calendar-check"></i> Organisation</span>
+            <span><i class="fas fa-handshake"></i> Coordination</span>
+            <span><i class="fas fa-comment-dots"></i> Communication</span>
+            <span><i class="fas fa-users-cog"></i> Travail d'équipe</span>
+        </div>
+    </div>
+
+    <!-- ===== EXPÉRIENCE 2 : THERMAL SCIENCE ===== -->
+    <div class="exp-card-full">
+        <div class="card-header">
+            <div class="icon thermal">
+                <i class="fas fa-flask"></i>
+            </div>
+            <div class="title-group">
+                <h2>Membre du Comité d'Organisation</h2>
+                <div class="badge thermal">Thermal Science</div>
+            </div>
+        </div>
+        <div class="card-sub">
+            <i class="fas fa-map-pin"></i> International Congress on Thermal Science · <i class="fas fa-tag"></i> « Thermal Science and Digitalisation »
+        </div>
+
+        <div class="event-photos">
+            <img src="T1.jpeg" alt="Thermal 1" class="landscape" />
+            <img src="T2.jpeg" alt="Thermal 2" />
+            <img src="T3.jpeg" alt="Thermal 3" />
+            <img src="T4.jpeg" alt="Thermal 4" />
+            <img src="T5.jpeg" alt="Thermal 5" />
+        </div>
+
+        <ul class="responsibilities">
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Participer</span> à la préparation du congrès.</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Contribuer</span> à la planification des activités.</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Assurer</span> la coordination des inscriptions.</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Accueillir</span> les intervenants et participants.</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Collaborer</span> à la logistique et au planning.</li>
+        </ul>
+
+        <div class="conference-skills">
+            <div class="skills-label"><i class="fas fa-bolt"></i> SKILLS DEVELOPED</div>
+            <div class="skills-tag">
+                <span><i class="fas fa-calendar-check"></i> Event organization</span>
+                <span><i class="fas fa-handshake"></i> Coordination</span>
+                <span><i class="fas fa-comment-dots"></i> Communication</span>
+                <span><i class="fas fa-truck"></i> Logistic management</span>
+                <span><i class="fas fa-users-cog"></i> Teamwork</span>
+                <span><i class="fas fa-tasks"></i> Organizational skills</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== EXPÉRIENCE 3 : SIL'25 ===== -->
+    <div class="exp-card-full">
+        <div class="card-header">
+            <div class="icon sil">
+                <i class="fas fa-truck"></i>
+            </div>
+            <div class="title-group">
+                <h2>Membre du Comité d'Organisation</h2>
+                <div class="badge sil">SIL'25</div>
+            </div>
+        </div>
+        <div class="card-sub">
+            <i class="fas fa-map-pin"></i> The 8th International Conference on Industrial and Logistics Systems (SIL'25) · <i class="fas fa-tag"></i> « Digital Transformation in Automotive &amp; Aeronautical Supply Chain »
+        </div>
+
+        <div class="event-photos">
+            <img src="S1.jpeg" alt="SIL 1" />
+            <img src="S2.jpeg" alt="SIL 2" />
+            <img src="S3.jpeg" alt="SIL 3" />
+        </div>
+
+        <ul class="responsibilities">
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Participer</span> à l'organisation et à la coordination.</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Concevoir</span> les supports de communication et badges.</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Contribuer</span> à la préparation logistique.</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Collaborer</span> avec les équipes pour le bon déroulement.</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Animer</span> la cérémonie d'ouverture.</li>
+        </ul>
+
+        <div class="conference-skills">
+            <div class="skills-label"><i class="fas fa-bolt"></i> SKILLS DEVELOPED</div>
+            <div class="skills-tag">
+                <span><i class="fas fa-calendar-check"></i> Event organization</span>
+                <span><i class="fas fa-paint-brush"></i> Visual communication</span>
+                <span><i class="fas fa-handshake"></i> Coordination</span>
+                <span><i class="fas fa-project-diagram"></i> Project management</span>
+                <span><i class="fas fa-lightbulb"></i> Creativity</span>
+                <span><i class="fas fa-users-cog"></i> Teamwork</span>
+                <span><i class="fas fa-microphone-alt"></i> Animation</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== EXPÉRIENCE 4 : HACKATHON WATER4FUTURE (couleur Sanofi) ===== -->
+    <div class="exp-card-full">
+        <div class="card-header">
+            <!-- Icône avec la couleur Sanofi (bleu-vert) -->
+            <div class="icon water">
+                <i class="fas fa-tint"></i>
+            </div>
+            <div class="title-group">
+                <h2>Membre du Comité d'Organisation &amp; Participante</h2>
+                <div class="badge water">Water4Future</div>
+            </div>
+        </div>
+        <div class="card-sub">
+            <i class="fas fa-map-pin"></i> Université Cadi Ayyad &amp; Centre International UNESCO sur l'Eau de Montpellier (ICIREWARD) · <i class="fas fa-calendar"></i> 1, 2 et 4 décembre 2025
+        </div>
+
+        <p style="font-size: 0.9rem; color: #2e1065; margin-bottom: 1rem;">
+            Participation au Hackathon Water4Future, un événement d'innovation consacré aux enjeux de la gestion
+            durable de l'eau et de l'agriculture, réunissant 390 étudiants répartis en 64 équipes. Contribution à la
+            fois en tant que membre du comité d'organisation et participante au développement d'un projet innovant.
+            Au sein de l'équipe WaterBenders, participation à la conception d'un <b>Smart Irrigation System</b>,
+            une solution visant à optimiser l'irrigation agricole et à réduire le gaspillage des ressources en eau
+            grâce aux technologies numériques et à l'IoT.
+        </p>
+
+        <div class="event-photos">
+            <!-- H1, H2, H3 au format portrait (téléphone) -->
+            <img src="H1.jpeg" alt="Water4Future 1" class="portrait" />
+            <img src="H2.jpeg" alt="Water4Future 2" class="portrait" />
+            <img src="H3.jpeg" alt="Water4Future 3" class="portrait" />
+            <!-- H4 au format paysage (PC) -->
+            <img src="H4.jpeg" alt="Water4Future 4" class="landscape" />
+            <!-- H5 reste sans classe spécifique pour garder son format d'origine -->
+            <img src="H5.png" alt="Water4Future 5" />
+        </div>
+
+        <div class="sub-heading"><i class="fas fa-clipboard-list"></i> Responsabilités · Comité d'organisation</div>
+        <ul class="responsibilities">
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Contribuer</span> à l'organisation et à la coordination du hackathon.</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Accompagner</span> les participants et soutenir le bon déroulement de l'événement.</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Coordonner</span> la logistique avec les équipes organisatrices et les partenaires.</li>
+        </ul>
+
+        <div class="sub-heading"><i class="fas fa-lightbulb"></i> Contributions au projet</div>
+        <ul class="responsibilities">
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Développer</span> le concept d'une application mobile dédiée à la gestion intelligente de l'irrigation.</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Participer</span> à la conception d'un système IoT intégrant des capteurs de haute précision pour la détection des fuites d'eau.</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Collaborer</span> au sein d'une équipe multidisciplinaire dans un environnement d'innovation intensif.</li>
+            <li><i class="fas fa-chevron-right"></i> <span class="highlight">Présenter</span> une solution répondant aux défis de la gestion durable des ressources hydriques.</li>
+        </ul>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <div class="footer-note">
+        <div class="footer-left">
+            <i class="fas fa-asterisk"></i> Expériences MUN · CGIL · Thermal Science · SIL'25 · Water4Future
+        </div>
+        <div class="footer-right">
+            <span class="dot"></span>
+            <i class="fas fa-gavel"></i> Portfolio
+            <span class="dot"></span>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

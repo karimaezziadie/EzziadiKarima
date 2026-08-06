@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Expériences — Karima Ezziadi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple: #7A00E6;
+    --black: #0A0A0A;
+    --white: #FFFFFF;
+    --lavender: #F5EEFC;
+    --text-body: #5C5566;
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  img{ max-width: 100%; display: block; }
+  body{
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, var(--white) 0%, var(--white) 55%, var(--lavender) 100%);
+    min-height: 100vh;
+    color: var(--black);
+    overflow-x: auto;
+  }
+  .container{ max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+  nav{ display: flex; align-items: center; justify-content: space-between; padding: 30px 0 10px; }
+  .logo{ font-size: 1.4rem; font-weight: 700; color: var(--black); text-decoration: none; }
+  .logo span{ color: var(--purple); }
+  .nav-links{ display: flex; align-items: center; gap: 34px; list-style: none; }
+  .nav-links a{ text-decoration: none; color: var(--black); font-size: 0.95rem; font-weight: 500; padding-bottom: 4px; }
+  .nav-links a.active{ color: var(--purple); border-bottom: 2px solid var(--purple); }
+  .contact-btn{
+    background: var(--black); color: var(--white); border: none; padding: 12px 26px;
+    border-radius: 30px; font-family: inherit; font-size: 0.9rem; font-weight: 500;
+    cursor: pointer; text-decoration: none; transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .contact-btn:hover{ background: var(--purple); transform: translateY(-2px); }
+  @media (max-width: 900px){ .nav-links{ display: none; } }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <nav>
+    <a href="index.html" class="logo">Karima<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+      <li><a href="competences.html">Compétences</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="experiences.html" class="active">Expériences</a></li>
+      <li><a href="Activités parascolaires.html">Activités parascolaires</a></li>
+    </ul>
+    <a href="contact.html" class="contact-btn">Contactez-moi</a>
+  </nav>
+</div>
+
+<section id="experience">
+
+    <div class="experience-title">
+        <h1>Mes <span>expériences</span></h1>
+        <p>
+            Découvrez les expériences professionnelles qui ont renforcé mes compétences
+            en Supply Chain, Production, Qualité et Amélioration Continue.
+        </p>
+    </div>
+
+    <!-- EXPERIENCE 1 (SANOFI) - EN PREMIER -->
+    <div class="experience-card">
+
+        <div class="experience-image gallery-two-simple">
+            <img src="sanofi1.jpeg" alt="Stage Sanofi 1">
+            <img src="sanofi2.jpeg" alt="Stage Sanofi 2">
+        </div>
+
+        <div class="experience-content">
+
+            <div class="experience-top">
+                <h2 class="stage-title">Stage effectué dans Sanofi</h2>
+                
+                <div class="right-group">
+                    <img src="logo sanofi.jpeg" alt="Logo Sanofi" class="small-logo">
+                    <span class="date">Juin – Août 2026</span>
+                </div>
+            </div>
+
+            <h3 class="company-activity">Stagiaire Supply Chain – Sales & Operations Execution (S&OE) | Casablanca</h3>
+
+            <p style="color:#666; margin-bottom: 15px; font-size: 17px;">
+                <i>Sanofi est un leader mondial de l'industrie pharmaceutique.</i>
+            </p>
+
+            <h4 style="color: var(--purple); font-size: 18px; margin-bottom: 5px;">Projet principal : S&OE Automation Hub</h4>
+            <p style="color:#555; margin-bottom: 15px; font-size: 17px;">
+                Conception et développement d'une solution d'automatisation destinée à optimiser le processus de Sales & Operations Execution (S&OE). Le projet consiste à digitaliser le reporting Supply Chain afin de réduire les traitements manuels, fiabiliser les données et améliorer la prise de décision grâce à l'intégration de Excel VBA, Power Automate et d'un Dashboard interactif.
+            </p>
+
+            <p style="font-weight: 600; color: #111; margin-bottom: 5px;">Principales réalisations :</p>
+            <ul>
+                <li>Analyse complète du processus S&OE et identification des opportunités de digitalisation.</li>
+                <li>Développement d'une application Excel VBA permettant l'automatisation de la consolidation et du traitement des données provenant de SAP, IBP et de plusieurs fichiers Excel.</li>
+                <li>Conception d'un Dashboard interactif pour le suivi en temps réel des principaux KPI Supply Chain.</li>
+                <li>Mise en place d'un workflow Microsoft Power Automate pour l'envoi automatique des reportings.</li>
+                <li>Optimisation du processus de reporting en réduisant significativement les tâches manuelles et les risques d'erreurs.</li>
+            </ul>
+
+            <p style="font-weight: 600; color: #111; margin: 15px 0 5px 0;">Autres missions réalisées :</p>
+            <ul>
+                <!-- ✅ TÂCHE AJOUTÉE ICI (DANS AUTRES MISSIONS) -->
+                <li>Saisie et traitement des commandes d'approvisionnement sur la plateforme interne de Sanofi destinées à plusieurs centres de distribution internationaux.</li>
+                
+                <li><strong>Standardisation des processus :</strong> Rédaction et mise à jour de plusieurs Standard Operating Procedures (SOP) afin de standardiser les processus opérationnels du département Supply Chain.</li>
+                <li><strong>SAP Supply Chain :</strong> Élaboration du mode opératoire de création des clients dans SAP. Documentation du processus de gestion des IDoc. Formalisation de la procédure de facturation.</li>
+                <li><strong>Amélioration continue :</strong> Analyse et cartographie des processus métiers. Documentation des flux opérationnels et amélioration de leur traçabilité.</li>
+            </ul>
+
+            <div class="tags">
+                <span class="tag">Supply Chain</span>
+                <span class="tag">SAP</span>
+                <span class="tag">Excel VBA</span>
+                <span class="tag">Power Automate</span>
+                <span class="tag">Dashboard</span>
+                <span class="tag">SOP</span>
+                <span class="tag">Reporting Automation</span>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- FIN EXPÉRIENCE SANOFI -->
+
+    <!-- EXPERIENCE 2 (GEMAPLAST) -->
+    <div class="experience-card">
+
+        <div class="experience-image experience-gallery">
+            <div class="gallery-phones">
+                <img src="PFS00.jpeg" alt="Stage PFS - GEMAPLAST 1">
+                <img src="PFS01.jpeg" alt="Stage PFS - GEMAPLAST 2">
+                <img src="PFS1.jpeg" alt="Stage PFS - GEMAPLAST 3">
+            </div>
+            <div class="gallery-pc">
+                <img src="PFS22.jpeg" alt="Stage PFS - GEMAPLAST 4">
+                <img src="PFS33.jpeg" alt="Stage PFS - GEMAPLAST 5">
+                <img src="PFS44.jpeg" alt="Stage PFS - GEMAPLAST 6">
+            </div>
+        </div>
+
+        <div class="experience-content">
+
+            <div class="experience-top">
+                <h2 class="stage-title">Stage effectué dans Gemaplast</h2>
+                
+                <div class="right-group">
+                    <img src="gempalts.jpeg" alt="Logo Gempalts" class="small-logo">
+                    <span class="date">Avril – Mai 2026</span>
+                </div>
+            </div>
+
+            <h3 class="company-activity">Leader en fabrication et commercialisation des tuyaux en plastique.</h3>
+
+            <ul>
+                <li>Contribution à l'amélioration et à la digitalisation du processus d'approvisionnement de l'entreprise.</li>
+                <li>Conception et développement d'une application web permettant de digitaliser le flux d'approvisionnement, du magasinier jusqu'au fournisseur, en remplaçant un processus manuel basé sur le papier par un circuit numérique en temps réel.</li>
+                <li>Développement de l'interface utilisateur avec React et mise en place du backend avec Firebase, Node.js et Vite.</li>
+                <li>Gestion de la base de données, de l'authentification des utilisateurs et du déploiement de l'application via Firebase Hosting.</li>
+                <li>Participation à la gestion opérationnelle des demandes d'approvisionnement, à la création et au suivi des commandes fournisseurs ainsi qu'au contrôle de leur état d'avancement.</li>
+                <li>Contribution au suivi des achats, à la transmission des commandes aux fournisseurs et à la coordination entre le magasin et le service approvisionnement afin d'assurer la disponibilité des matières premières.</li>
+                <li>Collaboration avec les différents services pour analyser les besoins, optimiser le processus d'achat et réduire les délais de traitement.</li>
+                <li>Travail en équipe dans un environnement industriel en appliquant les principes de digitalisation et d'amélioration continue.</li>
+            </ul>
+
+            <div class="tags">
+                <span class="tag">Gestion des approvisionnements</span>
+                <span class="tag">Gestion de stock</span>
+                <span class="tag">Digitalisation des processus</span>
+                <span class="tag">Gestion des commandes</span>
+                <span class="tag">Collaboration interservices</span>
+                <span class="tag">Travail en équipe</span>
+                <span class="tag">Gestion de projet</span>
+                <span class="tag">React</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Vite</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- EXPERIENCE 3 (ONCF) -->
+    <div class="experience-card card-wide">
+
+        <div class="experience-image gallery-grid">
+            <img src="ONCF1.jpeg" alt="Stage ONCF 1">
+            <img src="ONCF2.jpeg" alt="Stage ONCF 2">
+            <img src="ONCF3.jpeg" alt="Stage ONCF 3">
+            <img src="ONCF4.jpeg" alt="Stage ONCF 4">
+        </div>
+
+        <div class="experience-content">
+
+            <div class="experience-top">
+                <h2 class="stage-title">Stage effectué dans ONCF</h2>
+                
+                <div class="right-group">
+                    <img src="ONCF.jpeg" alt="Logo ONCF" class="small-logo">
+                    <span class="date">Août 2025</span>
+                </div>
+            </div>
+
+            <h3 class="company-activity">Office National des Chemins de Fer.</h3>
+
+            <ul>
+                <li>Participation à l'analyse et à l'optimisation des flux logistiques d'import et d'export.</li>
+                <li>Réalisation d'un état des lieux des opérations de manutention et de gestion des conteneurs.</li>
+                <li>Conception d'un système de traçabilité des conteneurs basé sur des QR Codes.</li>
+                <li>Développement d'un tableau de bord interactif sous <b>Power BI</b> pour le suivi des flux logistiques et des indicateurs de performance.</li>
+            </ul>
+
+            <div class="tags">
+                <span class="tag">Power BI</span>
+                <span class="tag">QR Code</span>
+                <span class="tag">Logistique</span>
+                <span class="tag">Traçabilité</span>
+                <span class="tag">Analyse des flux</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- EXPERIENCE 4 (CBGS - COCA-COLA) -->
+    <div class="experience-card">
+
+        <div class="experience-image">
+            <img src="coca1.jpeg" alt="Stage Coca-Cola 1">
+        </div>
+
+        <div class="experience-content">
+
+            <div class="experience-top">
+                <h2 class="stage-title">Stage effectué dans CBGS</h2>
+                
+                <div class="right-group">
+                    <img src="CBGS.jpeg" alt="Logo CBGS" class="small-logo">
+                    <span class="date">Juillet 2025</span>
+                </div>
+            </div>
+
+            <h3 class="company-activity">COMPAGNIE DES BOISSONS GAZEUSES DU SUD.</h3>
+
+            <ul>
+                <li>Découverte et analyse du fonctionnement des lignes de production.</li>
+                <li>Observation des procédures de contrôle qualité appliquées tout au long du processus.</li>
+                <li>Participation au suivi des indicateurs de performance et des normes de sécurité.</li>
+                <li>Familiarisation avec les équipements industriels et les principes de l'amélioration continue.</li>
+            </ul>
+
+            <div class="tags">
+                <span class="tag">Contrôle qualité</span>
+                <span class="tag">Production</span>
+                <span class="tag">Amélioration continue</span>
+                <span class="tag">Sécurité industrielle</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/**************** EXPERIENCE ****************/
+
+#experience{
+    width:100%;
+    padding:110px 8%;
+    background:#f8fbff;
+}
+
+/******** TITRE ********/
+
+.experience-title{
+    margin-bottom:70px;
+}
+
+.experience-title h1{
+    font-size:68px;
+    font-weight:800;
+    color:#111;
+    margin-bottom:20px;
+    animation:titleMove 1s ease;
+}
+
+.experience-title span{
+    color:#6C2CF3;
+    position:relative;
+    display:inline-block;
+    animation:titleMove 1.2s ease;
+}
+
+.experience-title span::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:8px;
+    width:100%;
+    height:7px;
+    background:#d7b7ff;
+    z-index:-1;
+    border-radius:20px;
+    animation:lineGrow 1.4s ease;
+}
+
+.experience-title p{
+    max-width:850px;
+    font-size:22px;
+    color:#5d5d5d;
+    line-height:1.8;
+}
+
+/******** CARD ********/
+
+.experience-card{
+    display:flex;
+    gap:45px;
+    background:white;
+    padding:40px;
+    border-radius:35px;
+    margin-bottom:45px;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.experience-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+}
+
+.experience-image{
+    width:35%;
+    min-width:320px;
+}
+
+.experience-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:25px;
+}
+
+/* Galerie de photos (Stage PFS - GEMAPLAST) : format téléphone + format PC */
+.experience-gallery{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    height:100%;
+    overflow:hidden;
+    min-width:0;
+}
+.gallery-phones{
+    display:flex;
+    gap:6px;
+    flex:1;
+    min-width:0;
+    min-height:0;
+    overflow:hidden;
+}
+.gallery-phones img{
+    flex:1 1 0;
+    min-width:0;
+    min-height:0;
+    width:0;
+    aspect-ratio:9 / 16;
+    object-fit:cover;
+    border-radius:12px;
+}
+.gallery-pc{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    flex:1;
+    min-width:0;
+    min-height:0;
+    overflow:hidden;
+}
+.gallery-pc img{
+    width:100%;
+    flex:1 1 0;
+    min-width:0;
+    min-height:0;
+    height:0;
+    aspect-ratio:16 / 9;
+    object-fit:contain;
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:12px;
+}
+
+/* Grille 2x2 de captures larges (Stage ONCF - dashboards) */
+.gallery-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    height:100%;
+}
+.gallery-grid img{
+    width:100%;
+    height:100%;
+    min-width:0;
+    min-height:0;
+    aspect-ratio:16 / 10;
+    object-fit:contain;
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:14px;
+}
+
+/* Nouveau style pour SANOFI (2 photos portrait) */
+.gallery-two-simple {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    padding: 10px;
+}
+.gallery-two-simple img {
+    flex: 1;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 1px solid #f0f0f0;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Effet créatif sur les photos Sanofi */
+.gallery-two-simple img:first-child {
+    transform: rotate(-2deg);
+    box-shadow: -8px 8px 20px rgba(0,0,0,0.1);
+}
+.gallery-two-simple img:last-child {
+    transform: rotate(2deg);
+    box-shadow: 8px 8px 20px rgba(0,0,0,0.1);
+}
+.experience-card:hover .gallery-two-simple img:first-child {
+    transform: rotate(0deg) scale(1.02);
+}
+.experience-card:hover .gallery-two-simple img:last-child {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.card-wide .experience-image{
+    width:55%;
+    min-width:420px;
+}
+
+.experience-content{
+    flex:1;
+}
+
+.experience-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:10px;
+    width: 100%;
+}
+
+/* LOGO ET TITRE SIMPLE À DROITE */
+.right-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.small-logo {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: contain !important;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 6px;
+    background: #f8f9fa;
+    flex-shrink: 0;
+}
+
+.date{
+    color:#6C2CF3;
+    font-weight:700;
+    font-size:18px;
+    white-space: nowrap;
+}
+
+/* TITRE SIMPLE ET MOINS GROS */
+.stage-title {
+    font-size: 28px !important;
+    color: #111;
+    margin: 0 !important;
+    font-weight: 700;
+}
+
+/* SOUS-TITRE DE L'ENTREPRISE */
+.company-activity {
+    color: #666;
+    font-size: 19px;
+    margin-bottom: 25px;
+    font-weight: 500;
+    margin-top: 0;
+}
+
+.experience-content ul{
+    padding-left:20px;
+}
+
+.experience-content li{
+    font-size:19px;
+    line-height:1.9;
+    color:#555;
+    margin-bottom:12px;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:22px;
+}
+
+.tag{
+    background:#EFE6FF;
+    color:#6C2CF3;
+    padding:9px 20px;
+    border-radius:30px;
+    font-weight:600;
+    font-size:15px;
+    white-space:nowrap;
+}
+
+/******** ANIMATIONS ********/
+
+@keyframes titleMove{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes lineGrow{
+    from{
+        width:0;
+    }
+    to{
+        width:100%;
+    }
+}
+
+/******** RESPONSIVE ********/
+
+@media(max-width:950px){
+    .experience-title h1{
+        font-size:50px;
+    }
+    .experience-content li{
+        font-size:17px;
+    }
+    .experience-image, .card-wide .experience-image {
+        width: 100%;
+        min-width: unset;
+    }
+    .experience-card {
+        flex-direction: column;
+    }
+    
+    /* Mobile adjustments */
+    .experience-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .right-group {
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .stage-title {
+        font-size: 24px !important;
+    }
+    
+    /* Réinitialiser les rotations sur mobile pour les photos Sanofi */
+    .gallery-two-simple img:first-child,
+    .gallery-two-simple img:last-child {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}
+</style>
+
+</body>
+</html>

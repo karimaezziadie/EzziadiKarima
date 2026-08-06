@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compétences — Karima Ezziadi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* ===== ROOT ===== */
+:root {
+  --purple: #7A00E6;
+  --purple-light: #A855F7;
+  --purple-dark: #4C1D95;
+  --black: #0A0A0A;
+  --white: #FFFFFF;
+  --lavender: #F5EEFC;
+  --text-body: #4A4458;
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(122, 0, 230, 0.08);
+  --shadow: 0 20px 60px rgba(122, 0, 230, 0.06);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #FAF8FF;
+  min-height: 100vh;
+  color: var(--black);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ===== FOND ANIMÉ TRANSPARENT ===== */
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(122, 0, 230, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(168, 85, 247, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(122, 0, 230, 0.03) 0%, transparent 50%);
+  z-index: 0;
+  animation: floatBg 30s ease-in-out infinite alternate;
+}
+
+@keyframes floatBg {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(2%, 1%) rotate(2deg); }
+}
+
+.container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 40px; 
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== NAVIGATION ===== */
+nav { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 30px 0 20px;
+}
+
+.logo { 
+  font-size: 1.5rem; 
+  font-weight: 800; 
+  color: var(--black); 
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+.logo span { 
+  color: var(--purple);
+  background: linear-gradient(135deg, var(--purple), var(--purple-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links { 
+  display: flex; 
+  align-items: center; 
+  gap: 34px; 
+  list-style: none; 
+}
+.nav-links a { 
+  text-decoration: none; 
+  color: var(--black); 
+  font-size: 0.9rem; 
+  font-weight: 500; 
+  padding-bottom: 4px; 
+  transition: all 0.3s ease;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--purple), var(--purple-light));
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+.nav-links a:hover { color: var(--purple); }
+.nav-links a.active { 
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.contact-btn {
+  background: linear-gradient(135deg, var(--purple), var(--purple-light));
+  color: var(--white);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 25px rgba(122, 0, 230, 0.2);
+}
+.contact-btn:hover { 
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(122, 0, 230, 0.3);
+}
+
+/* ===== PAGE HEADER ===== */
+.page-content { padding: 30px 0 100px; }
+
+.page-header {
+  margin-bottom: 50px;
+}
+.page-header .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(122, 0, 230, 0.06);
+  border: 1px solid var(--glass-border);
+  padding: 6px 20px;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--purple);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 16px;
+}
+.page-header .badge .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--purple);
+  display: inline-block;
+  animation: pulseDot 1.5s ease-in-out infinite;
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.2; transform: scale(0.5); }
+}
+
+.page-header h1 { 
+  font-size: clamp(2.5rem, 5vw, 3.5rem); 
+  font-weight: 800; 
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+.page-header h1 .highlight { 
+  background: linear-gradient(135deg, var(--purple), #B44AFF, var(--purple-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradShift 4s ease-in-out infinite;
+}
+@keyframes gradShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.page-header p {
+  max-width: 550px;
+  color: var(--text-body);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-top: 8px;
+}
+
+/* ===== GRILLE ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 30px;
+}
+
+.skill-category {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 32px 34px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+}
+.skill-category::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--purple), var(--purple-light), var(--purple));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.skill-category:hover::before { opacity: 1; }
+.skill-category:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 80px rgba(122, 0, 230, 0.08);
+  border-color: rgba(122, 0, 230, 0.12);
+}
+
+.skill-category .cat-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid rgba(122, 0, 230, 0.06);
+}
+.skill-category .cat-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--purple);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ===== LISTE TECHNIQUE ===== */
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.skill-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.skill-group .group-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--black);
+  letter-spacing: -0.2px;
+}
+.skill-group .group-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-left: 4px;
+}
+.skill-group .group-tags .tag {
+  background: rgba(122, 0, 230, 0.06);
+  padding: 2px 14px;
+  border-radius: 30px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--purple-dark);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid transparent;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+}
+.skill-group .group-tags .tag:hover {
+  background: var(--purple);
+  color: var(--white);
+  transform: scale(1.05) translateY(-2px);
+  border-color: var(--purple);
+  box-shadow: 0 8px 25px rgba(122, 0, 230, 0.15);
+}
+
+/* ===== SOFT SKILLS ===== */
+.soft-skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.soft-skill-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+.soft-skill-item:hover {
+  background: rgba(122, 0, 230, 0.04);
+  border-color: var(--glass-border);
+  transform: translateX(6px);
+}
+.soft-skill-item .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--purple);
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+.soft-skill-item .text {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--black);
+}
+
+/* ===== CERTIFICATIONS ===== */
+.certif-section {
+  margin-top: 60px;
+  padding-top: 50px;
+  border-top: 2px solid rgba(122, 0, 230, 0.06);
+}
+.certif-section .certif-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.certif-section .certif-title .line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(122, 0, 230, 0.1), transparent);
+}
+
+.certif-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.certif-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 18px 22px;
+  border-radius: 18px;
+  border: 1px solid var(--glass-border);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.certif-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(122, 0, 230, 0.12);
+  box-shadow: 0 20px 50px rgba(122, 0, 230, 0.06);
+}
+.certif-card .certif-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: rgba(122, 0, 230, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.certif-card .certif-info .name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--black);
+  line-height: 1.3;
+}
+.certif-card .certif-info .org {
+  font-size: 0.7rem;
+  color: var(--text-body);
+}
+.certif-card .certif-info .status {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #16A34A;
+  background: rgba(22, 163, 74, 0.08);
+  padding: 2px 14px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 4px;
+}
+.certif-card .certif-info .status.encours {
+  color: var(--purple);
+  background: rgba(122, 0, 230, 0.08);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .skills-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .container { padding: 0 24px; }
+  .skill-category { padding: 24px 20px; }
+  .certif-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .page-header h1 { font-size: 2rem; }
+  .contact-btn { padding: 10px 20px; font-size: 0.8rem; }
+  .skill-group .group-tags .tag { font-size: 0.65rem; padding: 2px 10px; height: 24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="index.html" class="logo">Karima<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+      <li><a href="compétences.html" class="active">Compétences</a></li>
+      <li><a href="projets.html">Projets</a></li>
+      <li><a href="Activités%20parascolaires.html">Activités</a></li>
+      <li><a href="expérience.html">Expériences</a></li>
+    </ul>
+    <a href="contact.html" class="contact-btn">Contactez-moi</a>
+  </nav>
+
+  <!-- CONTENU -->
+  <section class="page-content">
+
+    <div class="page-header">
+      <div class="badge">
+        <span class="dot"></span>
+        Mon arsenal technique
+      </div>
+      <h1>Mes <span class="highlight">compétences</span></h1>
+      <p>Un mélange d'expertise en Supply Chain, en Data, en conception et en outils digitaux pour répondre aux défis industriels d'aujourd'hui.</p>
+    </div>
+
+    <div class="skills-grid">
+
+      <!-- COMPÉTENCES TECHNIQUES -->
+      <div class="skill-category">
+        <div class="cat-header">
+          <span class="cat-title">TECHNICAL SKILLS</span>
+        </div>
+        <div class="skill-list">
+
+          <div class="skill-group">
+            <div class="group-title">Lean & Continuous Improvement</div>
+            <div class="group-tags">
+              <span class="tag">VSM</span>
+              <span class="tag">5S</span>
+              <span class="tag">Six Sigma</span>
+              <span class="tag">Kaizen</span>
+              <span class="tag">FMEA</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="group-title">ERP Manipulation</div>
+            <div class="group-tags">
+              <span class="tag">SAP (SD/MM)</span>
+              <span class="tag">SAGE 100C</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="group-title">Production Planning</div>
+            <div class="group-tags">
+              <span class="tag">MRP</span>
+              <span class="tag">PDP</span>
+              <span class="tag">PEAK</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="group-title">Simulation & Modeling</div>
+            <div class="group-tags">
+              <span class="tag">ARENA</span>
+              <span class="tag">AnyLogic</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="group-title">3D Design</div>
+            <div class="group-tags">
+              <span class="tag">CATIA V5</span>
+              <span class="tag">SOLIDWORKS</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="group-title">Data Visualization & Analysis</div>
+            <div class="group-tags">
+              <span class="tag">MySQL</span>
+              <span class="tag">Power BI</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="group-title">QHSE Standards</div>
+            <div class="group-tags">
+              <span class="tag">ISO 9001</span>
+              <span class="tag">ISO 14001</span>
+              <span class="tag">ISO 22000</span>
+              <span class="tag">ISO 45001</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="group-title">MS Office Tools</div>
+            <div class="group-tags">
+              <span class="tag">Excel Avancé</span>
+              <span class="tag">Word</span>
+              <span class="tag">PPT</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SOFT SKILLS -->
+      <div class="skill-category">
+        <div class="cat-header">
+          <span class="cat-title">SOFT SKILLS</span>
+        </div>
+        <div class="soft-skills-list">
+          <div class="soft-skill-item">
+            <span class="dot"></span>
+            <span class="text">Written and oral communication</span>
+          </div>
+          <div class="soft-skill-item">
+            <span class="dot"></span>
+            <span class="text">Teamwork and listening skills</span>
+          </div>
+          <div class="soft-skill-item">
+            <span class="dot"></span>
+            <span class="text">Analytical and synthesis skills</span>
+          </div>
+          <div class="soft-skill-item">
+            <span class="dot"></span>
+            <span class="text">Autonomy, adaptability and self-learning</span>
+          </div>
+          <div class="soft-skill-item">
+            <span class="dot"></span>
+            <span class="text">Organization and adherence to deadlines</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="certif-section">
+      <div class="certif-title">
+        <span>🎓</span> Certifications
+        <span class="line"></span>
+      </div>
+      <div class="certif-grid">
+
+        <div class="certif-card">
+          <div class="certif-icon">📜</div>
+          <div class="certif-info">
+            <div class="name">Supply Chain Management</div>
+            <div class="org">Alison · 2025</div>
+            <span class="status">Obtenue</span>
+          </div>
+        </div>
+
+        <div class="certif-card">
+          <div class="certif-icon">📜</div>
+          <div class="certif-info">
+            <div class="name">Six Sigma – Phases avancées</div>
+            <div class="org">Alison · En cours</div>
+            <span class="status encours">En cours</span>
+          </div>
+        </div>
+
+        <div class="certif-card">
+          <div class="certif-icon">📊</div>
+          <div class="certif-info">
+            <div class="name">Power BI – Data Visualization</div>
+            <div class="org">Certification</div>
+            <span class="status">Obtenue</span>
+          </div>
+        </div>
+
+        <div class="certif-card">
+          <div class="certif-icon">📈</div>
+          <div class="certif-info">
+            <div class="name">Excel VBA – Automatisation</div>
+            <div class="org">Certification</div>
+            <span class="status">Obtenue</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+</div>
+
+</body>
+</html>
