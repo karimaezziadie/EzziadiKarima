@@ -71,8 +71,16 @@
     <div class="experience-card">
 
         <div class="experience-image gallery-two-simple">
-            <img src="sanofi1.jpeg" alt="Stage Sanofi 1">
-            <img src="sanofi2.jpeg" alt="Stage Sanofi 2">
+            <div class="sanofi-photos-grid">
+                <img src="sanofi1.jpeg" alt="Stage Sanofi 1">
+                <img src="sanofi2.jpeg" alt="Stage Sanofi 2">
+                <img src="DA1.jpeg" alt="Dashboard Sanofi - Vue 1" class="dashboard-img">
+                <img src="DA2.jpeg" alt="Dashboard Sanofi - Vue 2" class="dashboard-img">
+            </div>
+            <p class="dashboard-caption">
+                Ce dashboard est généré à partir de plusieurs sources de données grâce à un processus automatisé via VBA.
+            </p>
+            <img src="DA3.png" alt="Dashboard Sanofi - Vue 3" class="dashboard-img-solo">
         </div>
 
         <div class="experience-content">
@@ -419,37 +427,48 @@
     border-radius:14px;
 }
 
-/* Nouveau style pour SANOFI (2 photos portrait) */
+/* Nouveau style pour SANOFI (photos + dashboard en grille 2x2) */
 .gallery-two-simple {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     height: 100%;
     padding: 10px;
 }
-.gallery-two-simple img {
-    flex: 1;
-    height: 50%;
+.sanofi-photos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+.sanofi-photos-grid img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 16px;
     border: 1px solid #f0f0f0;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 6px 16px rgba(0,0,0,.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* Effet créatif sur les photos Sanofi */
-.gallery-two-simple img:first-child {
-    transform: rotate(-2deg);
-    box-shadow: -8px 8px 20px rgba(0,0,0,0.1);
+.sanofi-photos-grid img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,.12);
 }
-.gallery-two-simple img:last-child {
-    transform: rotate(2deg);
-    box-shadow: 8px 8px 20px rgba(0,0,0,0.1);
+.sanofi-photos-grid img.dashboard-img {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #fff;
+    border: 1px solid #eee;
 }
-.experience-card:hover .gallery-two-simple img:first-child {
-    transform: rotate(0deg) scale(1.02);
-}
-.experience-card:hover .gallery-two-simple img:last-child {
-    transform: rotate(0deg) scale(1.02);
+.dashboard-img-solo {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,.08);
+    margin-top: 4px;
 }
 
 .card-wide .experience-image{
@@ -539,6 +558,17 @@
     white-space:nowrap;
 }
 
+/******** CAPTION DASHBOARD (Sanofi) ********/
+
+.dashboard-caption{
+    font-size:14px;
+    color:var(--text-body);
+    font-style:italic;
+    line-height:1.5;
+    text-align:center;
+    padding:0 4px;
+}
+
 /******** ANIMATIONS ********/
 
 @keyframes titleMove{
@@ -592,11 +622,9 @@
         font-size: 24px !important;
     }
     
-    /* Réinitialiser les rotations sur mobile pour les photos Sanofi */
-    .gallery-two-simple img:first-child,
-    .gallery-two-simple img:last-child {
-        transform: none !important;
-        box-shadow: none !important;
+    /* Photos Sanofi (visage) sur mobile */
+    .sanofi-photos-grid img:not(.dashboard-img){
+        aspect-ratio: 4 / 3;
     }
 }
 </style>
